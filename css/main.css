@@ -1,23 +1,196 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Open+Sans:400,300,600,700,800);
+
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+/* entypo */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+
+@mixin clearfix() {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
 body {
-	background-color: lime;
+  font-size: 18px;
+  font-family: 'Roboto Slab';
 }
-.About-me {
-	text-align: center;
+
+header {
+  width: 100%;
+  height: 70px;
+  background-color: #222;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  color: #fff;
+  padding: 0 20px;
+  line-height: 70px;
+  .logo {
+    text-transform: uppercase;
+    float: left;
+  }
+  .nav {
+    float: right;
+    a {
+      display: block;
+      float: left;
+      margin-left: 20px;
+    }
+    &:after {
+      @include clearfix();
+    }
+  }
+  &:after {
+    @include clearfix();
+  }
 }
-div {
-border-style: solid;
-border-width: 5px;
-padding: 30px; 
-border-color: yellow;
+
+.header-spacer {
+  position: relative;
+  width: 100%;
+  height: 70px;
 }
-.container {
-border-color: blue;
+
+.header {
+  width: 100%;
+  background-image: url(http://journalism.berkeley.edu/projects/radio/advanced/wp-content/uploads/2011/02/dolores_park.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #94719A, #3AC5C9);
+    opacity: .8;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+  .header-wrapper {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    color: #fff;
+    font-family: 'Open Sans';
+    .info {
+      .avatar {
+        float: left;
+        width: 150px;
+        height: 150px;
+        background-image: url(http://s3-us-west-2.amazonaws.com/s.cdpn.io/22567/profile/profile-512_12.jpg);
+        background-size: cover;
+        background-position: center;
+        border: 2px solid #fff;
+        border-radius: 5px;
+      }
+      .details {
+        float: right;
+        width: 100%;
+        max-width: 510px;
+        .username {
+          font-weight: 800;
+          font-size: 2em;
+          line-height: 1;
+          margin-bottom: 20px;
+        }
+        .bio {
+          
+        }
+        .location {
+          margin-top: 20px;
+          &:before {
+            margin-right: 10px;
+          }
+        }
+      }
+      &:after {
+        @include clearfix();
+      }
+    }
+    .stats {
+      border-top: 2px solid #fff;
+      padding-top: 40px;
+      margin-top: 40px;
+      .one, .two, .three {
+        float: left;
+        width: 33.33%;
+        text-align: center;
+        padding: 20px 0;
+        font-size: 1.5em;
+        font-weight: 100;
+      }
+      .two {
+        border-left: 2px solid #fff;
+        border-right: 2px solid #fff;
+      }
+      &:after {
+        @include clearfix();
+      }
+    }
+  }
 }
-.row {
-border-color: red;
-}
-.list-group-item{
-border: 0;
-margin-top: 40px;
-margin-buttom: 40px; 
+
+.content-wrapper {
+  width: 100%;
+  max-width: 740px;
+  padding: 50px 20px;
+  margin: 0 auto;
+  article {
+    border: 2px solid #f4f4f4;
+    margin-bottom: 50px;
+    h2 {
+      width: 720px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      margin-left: -12px;
+      background: linear-gradient(90deg, #94719A, #3AC5C9);
+      color: #fff;
+      padding: 10px 30px;
+      position: relative;
+      line-height: 1;
+      &:before {
+        content: "";
+        border-top: 7px solid #836089;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        position: absolute;
+        left: 1px;
+        top: -6px;
+        transform: rotate(-45deg);
+      }
+      &:after {
+        content: "";
+        border-top: 7px solid #29b4b8;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        position: absolute;
+        right: 1px;
+        top: -6px;
+        transform: rotate(45deg);
+      }
+    }
+    p {
+      padding: 0 20px 20px 20px;
+      color: #333;
+    }
+  }
 }
